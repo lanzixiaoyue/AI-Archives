@@ -7,6 +7,7 @@ Cursor 的 Plugin 是官方推荐的安装方式，会自动更新，始终保�
 直接点这个链接在浏览器打开：
 https://cursor.com/marketplace/shopify
 页面上有一个 Sign In To Add 按钮，登录你的 Cursor 账号后点击即可一键安装 Shopify 插件。 cursor
+####
 这个插件包含：
 
 搜索 Shopify 文档
@@ -30,7 +31,7 @@ Admin API / Storefront API / Functions 全套支持
 方式二：Dev MCP Server（进阶，可与 Plugin 同时使用）
 Dev MCP Server 让 Cursor 的 AI 能实时搜索 Shopify 文档、探索 API schema，支持 Admin GraphQL API、Storefront API、Liquid、Functions、POS UI Extensions 等全套 API。服务器在本地运行，不需要额外认证。 shopify
 第一步：确认 Node.js ≥ 18
-bashnode -v
+输入node -v
 第二步：在 Cursor 里添加 MCP Server
 方法 A — 一键自动添加（最快）：
 浏览器打开这个链接，Cursor 会自动弹出配置界面：
@@ -60,11 +61,13 @@ json{
 第三部分：安装 Shopify CLI（操作店铺必须）
 光有 AI 工具还不够，要真正推送主题、执行店铺操作需要 Shopify CLI。
 在 Cursor 终端（Ctrl+``  ``）执行：
-bashnpm install -g @shopify/cli
+输入npm install -g @shopify/cli
 shopify version  # 验证安装成功
 登录你的店铺：
-bashshopify auth login --store your-store.myshopify.com
-浏览器弹出授权页 → 登录 → 点允许。
+输入shopify auth login 
+终端会输出设备码 To run this command, log in to Shopify.
+User verification code: VNQL-QBBZ
+浏览器弹出授权页 → 输出设备码-登录 → 点允许。
 
 连接成功后，在 Cursor Chat 里可以这样问：
 
@@ -80,16 +83,16 @@ Shopify CLI（连接店铺、同步文件）
 
 第一步：安装 Shopify CLI
 在 Cursor 终端（Ctrl+``  ``）执行：
-bashnpm install -g @shopify/cli
+输入npm install -g @shopify/cli
 验证安装：
-bashshopify version
+shopify version
 
 第二步：把店铺主题拉到本地
 2-1 创建工作目录
-bashmkdir my-shopify-theme
+输入mkdir my-shopify-theme
 cd my-shopify-theme
 2-2 拉取线上主题
-bashshopify theme pull --store your-store.myshopify.com
+shopify theme pull --store your-store.myshopify.com
 第一次运行会弹出浏览器要求登录授权，登录你的 Shopify 账号点允许。之后会列出你店铺里所有主题，选择你要编辑的那个（一般是 [live] 标注的那个）。
 拉取完成后本地目录结构如下：
 my-shopify-theme/
@@ -101,12 +104,12 @@ my-shopify-theme/
 ├── snippets/
 └── templates/
 2-3 用 Cursor 打开这个目录
-bashcode .
+输入code .
 或者 Cursor 菜单 → File → Open Folder → 选择 my-shopify-theme
 
 第三步：启动实时预览（热更新）
 在终端执行：
-bashshopify theme dev --store your-store.myshopify.com
+输入shopify theme dev --store your-store.myshopify.com
 这会启动一个本地预览服务器，终端会输出一个预览链接，例如：
 Preview your theme: https://your-store.myshopify.com/?preview_theme_id=xxxxx
 此时你在本地修改任何文件，浏览器会实时刷新预览效果，不影响线上正式主题。
@@ -134,7 +137,7 @@ Cursor 会自动：
 
 第五步：推送到线上店铺
 开发完成，确认预览效果没问题后，推送到正式主题：
-bash# 推送所有改动
+输入# 推送所有改动
 shopify theme push --store your-store.myshopify.com
 
 # 只推送特定文件（更安全）
