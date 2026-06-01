@@ -1,4 +1,4 @@
-请帮我开发一个 Shopify 自定义 Section，要求如下：
+你是一名 Shopify 主题开发专家，请帮我开发一个 Shopify 自定义 Section，要求如下：
 
 ---
 
@@ -15,6 +15,11 @@
 3. 所有文字、图片、颜色、链接必须在后台可编辑
 4. 使用 blocks 管理可重复内容（卡片、列表项、Tab等）
 5. 代码符合 Shopify theme-check 规范，无报错
+6. 所有 Section 必须包含完整 {% schema %} 块
+7. 图片使用 image_url filter 处理响应式
+8. 不使用 Vue/React，只用原生 Liquid + JS
+9. 遵循 Shopify 主题开发最佳实践
+10. img标签要给宽和高属性值
 
 ---
 
